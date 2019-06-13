@@ -1,1 +1,3 @@
 # unit-4-game
+This game is a guessing/ adding game. When you first load on to the page it will show you a number, your goal is to equal that number. 
+The gems on the screen are buttons that could produce any number between 1 and 12. The numbers will not switch until that round is over so once you figure that number out remenber it because that can help you win. Once you win or loose the game should restart and the numbers will randomize again. 

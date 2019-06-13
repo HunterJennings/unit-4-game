@@ -1,0 +1,26 @@
+#body {
+    background-color: aqua;
+}#name {
+    background-color: orange;
+}
+#diamond-image {
+    width: 150px;
+    height: 150px;
+}#emerald-image{
+    width: 150px;
+    height: 150px;
+}#ruby-image{
+    width: 150px;
+    height: 150px;
+}#topaz-image{
+    width: 150px;
+    height: 150px;
+}
+#instructions {
+    background-color:papayawhip;
+}#output {
+    background-color: green;
+}
+#crystals {
+
+}
