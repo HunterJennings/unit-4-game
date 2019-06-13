@@ -1,54 +1,184 @@
-//images numbers need to stay the same, they need to be outputed onto the html file so that you can see and keep track of your score/wins/losses after wins/or lose needs to reset
-
-//var I will be using threwout the game
+// cant get the counter to show on screen. that is why they are all console.log() but atleas i know the buttons are working properly
 var wins = 0;
 var losses = 0;
-var targetNumber = Math.floor(Math.random() * 101) + 19;
+var targetNumber = Math.floor(Math.random() * 90) + 19;
 var counter = 0;
-var winsText = document.getElementById("wins-text");
-var lossesText = document.getElementById("losses-text");
-var counterText = document.getElementById("counter-text");
-var targetNumberText = document.getElementById("targetNumber-text");
+var winsText = $("#wins-text");
+var lossesText = $("#losses-text");
+var counterText = $("#counter-text");
+var targetNumberText = $("#targetNumber-text");
 
 //out putting the text onto the html page
-$(document).ready(function() {
-    $("#winningNumber").text(targetNumber);
-    $("#wins-text").text("wins: " + wins);
-    $("#losses-text").text("losses: " + losses);
-    $("#counter-text").text(" " + counter);
-    // what happens when you click on the image buttons
-    // diamond image
-    $("#diamond-image").on("click", function () {
-        counter = Math.floor(Math.random() * 12) + 1;
-        console.log(counter);
-    });
-    
-    //emerald image
-    $("#emerald-image").on("click", function () {
-        counter = Math.floor(Math.random() * 12) + 1;
-        console.log(counter);
-    });
-    
-    //ruby image
-    $("#ruby-image").on("click", function () {
-        counter = Math.floor(Math.random() * 12) + 1;
-    });
-    
-    //topaz image
-    $("#topaz-image").on("click", function () {
-        counter = Math.floor(Math.random() * 12) + 1;
-    });
-    // bases for how the game is played and what happens when you win/ loose
+
+$("#winningNumber").text(targetNumber);
+$("#wins-text").text("wins: " + wins);
+$("#losses-text").text("losses: " + losses);
+$("#counter-text").text(" " + counter);
+// what happens when you click on the image buttons
+// diamond image
+
+var numbers = [];
+
+for (var i = 0; i < 4; i++) {
+    var number = Math.floor(Math.random() * 11) + 1;
+    numbers.push(number)
+}
+
+console.log(numbers)
+
+$("#diamond-image").on("click", function () {
+    counter += numbers[0];
+    console.log(counter);
     if (counter === targetNumber) {
         wins++;
-        ("#wins-text").html(win);
         counter = 0;
-    } else if (counter >= targetNumber) {
+        $("#counter-text").text(" " + counter);
+        numbers = [];
+        for (var i = 0; i < 4; i++) {
+            var number = Math.floor(Math.random() * 12) + 1;
+            numbers.push(number)
+        }
+        targetNumber = Math.floor(Math.random() * 101) + 19;
+
+        console.log(wins)
+        $("#winningNumber").text(targetNumber);
+        $("#wins-text").text(wins);
+
+
+    }
+
+    if (counter > targetNumber) {
         losses++;
-        ("#losses-text").html(losses);
-        counter = 0;                 
+        counter = 0;
+        $("#counter-text").text(" " + counter);
+        numbers = [];
+        for (var i = 0; i < 4; i++) {
+            var number = Math.floor(Math.random() * 12) + 1;
+            numbers.push(number)
+        }
+        targetNumber = Math.floor(Math.random() * 101) + 19;
+        $("#losses-text").text(losses);
+        console.log(losses)
+        $("#winningNumber").text(targetNumber);
     }
 });
-// I couldnt get the images to keep the same number after I clicked on them one time. I kept testing them using console.log() but couldn't figure it out. 
-// I will be in for morning session to try and get help with this. I struggled for hours running into one problem at a time. 
-// I slowly figured it out so with time I know I will understand this. 
+
+//emerald image
+$("#emerald-image").on("click", function () {
+    counter += numbers[1];
+    console.log(counter);
+    if (counter === targetNumber) {
+        wins++;
+        counter = 0;
+        $("#counter-text").text(" " + counter);
+        numbers = [];
+        for (var i = 0; i < 4; i++) {
+            var number = Math.floor(Math.random() * 12) + 1;
+            numbers.push(number)
+        }
+        targetNumber = Math.floor(Math.random() * 101) + 19;
+
+        console.log(wins)
+        $("#wins-text").text(wins);
+        $("#winningNumber").text(targetNumber);
+
+
+    }
+
+    if (counter > targetNumber) {
+        losses++;
+        counter = 0;
+        $("#counter-text").text(" " + counter);
+        numbers = [];
+        for (var i = 0; i < 4; i++) {
+            var number = Math.floor(Math.random() * 12) + 1;
+            numbers.push(number)
+        }
+        targetNumber = Math.floor(Math.random() * 101) + 19;
+        $("#losses-text").text(losses);
+        console.log(losses)
+        $("#winningNumber").text(targetNumber);
+    }
+});
+
+//ruby image
+$("#ruby-image").on("click", function () {
+    counter += numbers[2];
+    console.log(counter);
+    if (counter === targetNumber) {
+        wins++;
+        counter = 0;
+        $("#counter-text").text(" " + counter);
+        numbers = [];
+        for (var i = 0; i < 4; i++) {
+            var number = Math.floor(Math.random() * 12) + 1;
+            numbers.push(number)
+        }
+        targetNumber = Math.floor(Math.random() * 101) + 19;
+
+        console.log(wins)
+        $("#wins-text").text(wins);
+        $("#winningNumber").text(targetNumber);
+
+
+    }
+
+    if (counter > targetNumber) {
+        losses++;
+        counter = 0;
+        $("#counter-text").text(" " + counter);
+        numbers = [];
+        for (var i = 0; i < 4; i++) {
+            var number = Math.floor(Math.random() * 12) + 1;
+            numbers.push(number)
+        }
+        targetNumber = Math.floor(Math.random() * 101) + 19;
+        $("#losses-text").text(losses);
+        console.log(losses)
+        $("#winningNumber").text(targetNumber);
+    }
+});
+
+//topaz image
+$("#topaz-image").on("click", function () {
+    counter += numbers[3];
+    console.log(counter);
+    if (counter === targetNumber) {
+        wins++;
+        counter = 0;
+        $("#counter-text").text(" " + counter);
+        numbers = [];
+        for (var i = 0; i < 4; i++) {
+            var number = Math.floor(Math.random() * 12) + 1;
+            numbers.push(number)
+        }
+        targetNumber = Math.floor(Math.random() * 101) + 19;
+
+        console.log(wins)
+        $("#wins-text").text(wins);
+        $("#winningNumber").text(targetNumber);
+
+    }
+
+    if (counter > targetNumber) {
+        losses++;
+        counter = 0;
+        $("#counter-text").text(" " + counter);
+        numbers = [];
+        for (var i = 0; i < 4; i++) {
+            var number = Math.floor(Math.random() * 12) + 1;
+            numbers.push(number)
+        }
+        targetNumber = Math.floor(Math.random() * 101) + 19;
+        $("#losses-text").text(losses);
+        console.log(losses)
+        $("#winningNumber").text(targetNumber);
+    }
+});
+
+
+
+
+
+
+    
